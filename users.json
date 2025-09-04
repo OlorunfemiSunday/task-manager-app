@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ebed211b-715d-4aa4-85f7-ca3839c5987b",
+    "username": "ojojo24",
+    "passwordHash": "$2b$10$.WZBPLseQ4RXZ0Bm.U5dUeFAaAvMvBbKVmr5uQZNoh5jTqh5WzHZG",
+    "createdAt": "2025-09-04T15:01:29.798Z"
+  },
+  {
+    "id": "f4ef79dd-aee8-40d2-9798-9783f88dd94d",
+    "username": "ojojo26",
+    "passwordHash": "$2b$10$65.l/4qNsSfaO93FnZ9G1.kAYw1XFzt.ficBUxjV5u6R8FbTkniPa",
+    "createdAt": "2025-09-04T15:13:34.756Z"
+  },
+  {
+    "id": "a2722a9a-615a-41a6-8947-ad17931ba579",
+    "username": "femi",
+    "passwordHash": "$2b$10$sLzr3ChXFJ1gjEsIPN8TOuWcQawlqoMWkjuMNz/eOtxG8aumOzyvK",
+    "createdAt": "2025-09-04T15:19:53.403Z"
+  },
+  {
+    "id": "00cb6fe5-f3af-4799-ae8b-791edc39e238",
+    "username": "ojojo234",
+    "passwordHash": "$2b$10$QcFKTTNyi1ucO6svOpYLyu5w9tXDS9CXlWwUQzyNcIgVnVaMVydmW",
+    "createdAt": "2025-09-04T15:21:51.572Z"
+  }
+]

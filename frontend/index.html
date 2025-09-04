@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager - Login / Signup</title>
+    <style>
+      body {
+        font-family: system-ui, Arial, sans-serif;
+        background: #f5f7fb;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        width: 360px;
+      }
+      h1 {
+        margin-top: 0;
+        font-size: 1.4rem;
+      }
+      label {
+        display: block;
+        margin: 0.5rem 0 0.25rem;
+      }
+      input,
+      select {
+        width: 90%;
+        padding: 0.6rem 0.75rem;
+        border-radius: 10px;
+        border: 1px solid #d7dbe7;
+        outline: none;
+      }
+      input:focus {
+        border-color: #6c7ae0;
+        box-shadow: 0 0 0 3px rgba(108, 122, 224, 0.2);
+      }
+      button {
+        width: 100%;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 10px;
+        background: #6c7ae0;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+      button.secondary {
+        background: #e5e7f2;
+        color: #2d2f36;
+      }
+      .tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .tabs button {
+        flex: 1;
+      }
+      .error {
+        color: #c53030;
+        font-size: 0.9rem;
+        min-height: 1.2rem;
+        margin-top: 0.25rem;
+      }
+      .muted {
+        color: #6b7280;
+        font-size: 0.85rem;
+        text-align: center;
+        margin-top: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Task Manager</h1>
+      <div class="tabs">
+        <button id="loginTab">Login</button>
+        <button class="secondary" id="signupTab">Signup</button>
+      </div>
+      <div id="forms">
+        <div id="loginForm">
+          <label>Username</label>
+          <input id="login-username" />
+          <label>Password</label>
+          <input id="login-password" type="password" />
+          <button id="login-btn">Login</button>
+          <div class="error" id="login-error"></div>
+        </div>
+        <div id="signupForm" style="display: none">
+          <label>Username</label>
+          <input id="signup-username" />
+          <label>Password</label>
+          <input id="signup-password" type="password" />
+          <button id="signup-btn">Create Account</button>
+          <div class="error" id="signup-error"></div>
+        </div>
+      </div>
+      <div class="muted">New here? Click Signup.</div>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

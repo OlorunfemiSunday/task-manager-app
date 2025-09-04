@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager - Dashboard</title>
+    <style>
+      :root {
+        --low: #10b981; /* green */
+        --med: #f59e0b; /* orange */
+        --high: #ef4444; /* red */
+      }
+      body {
+        font-family: system-ui, Arial, sans-serif;
+        background: #f5f7fb;
+        margin: 0;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.25rem;
+        background: #fff;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        position: sticky;
+        top: 0;
+      }
+      h1 {
+        margin: 0;
+        font-size: 1.25rem;
+      }
+      main {
+        max-width: 900px;
+        margin: 1rem auto;
+        padding: 0 1rem;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      @media (min-width: 720px) {
+        .grid {
+          grid-template-columns: 1fr 2fr;
+        }
+      }
+      .card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        padding: 1rem;
+      }
+      label {
+        display: block;
+        margin: 0.5rem 0 0.25rem;
+      }
+      input,
+      select,
+      textarea {
+        width: 90%;
+        padding: 0.6rem 0.75rem;
+        border-radius: 10px;
+        border: 1px solid #d7dbe7;
+        outline: none;
+      }
+      textarea {
+        min-height: 90px;
+      }
+      button {
+        padding: 0.5rem 0.8rem;
+        border: none;
+        border-radius: 10px;
+        background: #374151;
+        color: #fff;
+        cursor: pointer;
+      }
+      .btn-row {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .task {
+        border: 1px solid #e6e8f2;
+        border-left: 8px solid #cbd5e1;
+        border-radius: 12px;
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      .task.low {
+        border-left-color: var(--low);
+      }
+      .task.medium {
+        border-left-color: var(--med);
+      }
+      .task.high {
+        border-left-color: var(--high);
+      }
+      .task .title {
+        font-weight: 600;
+      }
+      .task .meta {
+        font-size: 0.85rem;
+        color: #6b7280;
+      }
+      .badge {
+        padding: 0.15rem 0.5rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        color: #fff;
+      }
+      .badge.low {
+        background: var(--low);
+      }
+      .badge.medium {
+        background: var(--med);
+      }
+      .badge.high {
+        background: var(--high);
+      }
+      .done {
+        text-decoration: line-through;
+        color: #9ca3af;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Dashboard</h1>
+      <div class="btn-row">
+        <button id="refresh">Refresh</button>
+        <button id="logout" style="background: #ef4444">Logout</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>Create / Edit Task</h2>
+        <input type="hidden" id="task-id" />
+        <label>Title</label>
+        <input id="title" placeholder="e.g. Finish project report" />
+        <label>Description</label>
+        <textarea
+          id="description"
+          placeholder="Optional description..."
+        ></textarea>
+        <label>Priority</label>
+        <select id="priority">
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
+        <div class="btn-row" style="margin-top: 0.75rem">
+          <button id="save">Save Task</button>
+          <button id="reset" style="background: #6b7280">Reset</button>
+        </div>
+        <div
+          id="form-error"
+          class="meta"
+          style="color: #ef4444; margin-top: 0.5rem"
+        ></div>
+      </section>
+
+      <section class="card">
+        <h2>Your Tasks</h2>
+        <div id="tasks"></div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
